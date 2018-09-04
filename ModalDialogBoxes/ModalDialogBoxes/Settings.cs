@@ -8,12 +8,16 @@ namespace ModalDialogBoxes
 {
 	public class Settings
 	{
-		public bool[] checkBoxes { get; set; }
+		public bool checkBox1 { get; set; }
+		public bool checkBox2 { get; set; }
+		public bool checkBox3 { get; set; }
 		public string textBox { get; set; }
 		public DropDown dropdownList { get; set; }
 		public Settings()
 		{
-			checkBoxes = new bool[] { false, false, false };
+			checkBox1 = false;
+			checkBox2 = false;
+			checkBox3 = false;
 			textBox = "";
 			dropdownList = DropDown.Item1;
 		}

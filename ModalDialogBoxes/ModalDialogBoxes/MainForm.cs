@@ -17,12 +17,24 @@ namespace ModalDialogBoxes
 		{
 			s = new Settings();
 			InitializeComponent();
+			setView();
+			dropDown.Text = "";
+		}
+
+		private void setView()
+		{
+			CheckBox1.Visible = s.checkBox1;
+			CheckBox2.Visible = s.checkBox2;
+			CheckBox3.Visible = s.checkBox3;
+			textBox.Text = s.textBox;
+			dropDown.Text = s.dropdownList.ToString();
 		}
 
 		private void PopUpButton_Click(object sender, EventArgs e)
 		{
 			ModalDialogBox dialogBox = new ModalDialogBox();
 			DialogResult result = dialogBox.ShowDialog();
+			setView();
 		}
 	}
 }

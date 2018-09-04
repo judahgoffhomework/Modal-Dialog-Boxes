@@ -23,9 +23,9 @@ namespace ModalDialogBoxes
 
 		private void updateForm()
 		{
-			checkBox1.Checked = s.checkBoxes[0];
-			checkBox2.Checked = s.checkBoxes[1];
-			checkBox3.Checked = s.checkBoxes[2];
+			checkBox1.Checked = s.checkBox1;
+			checkBox2.Checked = s.checkBox2;
+			checkBox3.Checked = s.checkBox3;
 			textBox.Text = s.textBox;
 			dropdownList.SelectedItem = s.dropdownList.ToString();
 		}
@@ -63,20 +63,17 @@ namespace ModalDialogBoxes
 
 		private void updateCheckBox(CheckBox checkbox)
 		{
-			if (checkbox.Checked)
+			switch (checkbox.Name)
 			{
-				switch (checkbox.Name)
-				{
-					case "checkBox1":
-						MainForm.s.checkBoxes[0] = true;
-						break;
-					case "checkBox2":
-						MainForm.s.checkBoxes[1] = true;
-						break;
-					case "checkBox3":
-						MainForm.s.checkBoxes[2] = true;
-						break;
-				}
+				case "checkBox1":
+					s.checkBox1 = checkbox.Checked;
+					break;
+				case "checkBox2":
+					s.checkBox2 = checkbox.Checked;
+					break;
+				case "checkBox3":
+					s.checkBox3 = checkbox.Checked;
+					break;
 			}
 		}
 
